@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+          box-sizing: border-box;
+        }
+        .wrap{
+            width: 100%;
+           
+            height: 100vh;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(245, 245, 245, 1);
+;
+         
+        }
+        .left__part{
+            width: 20%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        justify-content: space-around;
+          padding: 0 20px;
+          padding-top: 20px;
+          padding-bottom: 40vh;
+            background-color: white;
+            user-select: none;
+           
+
+        }
+        .left__logo{
+            height: 50px;
+            width: 150px;
+            margin-left: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .img__logo{
+            width: 40px;
+            height: 50px;
+            display: flex;
+            cursor: pointer;
+         
+        }
+        .left__l{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .triangle__logo{
+            transition: 0.5s;
+        }
+        .triangle__logo1{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 13px 7.5px 0;
+border-color: transparent #00C068 transparent transparent;
+
+        }
+        .triangle__logo2{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 0 7.5px 13px;
+border-color: transparent transparent transparent #6C27FF;
+margin-left: -5px;
+        }
+        .triangle__logo3{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 13px 7.5px 0;
+border-color: transparent #01BEFF transparent transparent;
+        }
+     
+        .triangle__logo5{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 0 7.5px 13px;
+border-color: transparent transparent transparent #01BEFF;
+        }
+        .triangle__logo6{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 13px 7.5px 0;
+border-color: transparent #FFBF26 transparent transparent;
+margin-left: 5px;
+        }
+        .triangle__logo7{
+            width: 0;
+height: 0;
+border-style: solid;
+border-width: 7.5px 0 7.5px 13px;
+border-color: transparent transparent transparent #FF684D;
+        }
+    .left__logo__text{
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        font-size: 36px;
+        color: rgba(14, 110, 255, 1);
+    }
+    .left__btn__icon{
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+    .left__btn{
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 21px;
+        background-color: rgba(14, 110, 255, 1);
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .left__btn__type2{
+        width: 100%;
+        height: 45px;
+        border-radius: 10px;
+        color: rgba(114, 117, 122, 1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 17px 21px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        cursor: pointer;
+       
+    }
+    .right__part{
+        width: 80%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 40px;
+        padding-bottom: 20px;
+
+    }
+    .top__right{
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+    .name__section{
+        width: 28%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: rgba(23, 27, 30, 1);
+        font-size: 40px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+    }
+    .logo__section{
+        width: 35px;
+        height: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      
+      
+    }
+    .row{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .box__section{
+        width: 13px;
+        height: 13px;
+        border-radius: 2px;
+        background-color: rgba(23, 27, 30, 1);
+        margin-right: 3px;
+        margin-left: 3px;
+        
+    
+    }
+    .inp__top__right{
+        width: 25%;
+        height: 50px;
+        color: rgba(114, 117, 122, 1);
+        font-size: 20px;
+        border-radius: 15px;
+        outline: none;
+        border: 0px;
+        padding: 0 5px;
+    }
+    .top__set{
+        width: 30%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     
+    }
+    .dz__top{
+        width: 50px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+    }
+    .top__right__icon{
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .top__right__icon2{
+        width: 24px;
+        height: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .email__top{
+        width: 40px;
+        height: 35px;
+        display: flex;
+        align-items: center;
+    }
+    .top__number1{
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgba(255, 104, 77, 1);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: 'Poppins', sans-serif;
+        margin-top: -40%;
+      margin-left: -25%;
+      border: 1px solid rgba(245, 245, 245, 1);
+    }
+.top__right__icon3{
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.user__top{
+    width: 250px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  
+}
+.info__user{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+}
+.name__user{
+    font-weight: 700;
+    font-size: 24px;
+    color: rgba(0, 0, 0, 1);
+    font-family: 'Poppins', sans-serif;
+    width: 60%;
+}
+.email__user{
+    font-size: 14px;
+    color: rgba(114, 117, 122, 1);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    width: 60%;
+    
+}
+.main__right{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.top__main__right{
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box__main__col{
+    height: 120px;
+    width: 45%;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    align-items: flex-start;
+   background-color: rgba(3, 182, 100, 1);
+   border-radius: 20px;
+}
+.main__box__icon{
+    width: 20px;
+    height: 20px;
+  
+}
+.box__main__icon{
+    width: 50px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+}
+.right_box__main{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 10%;
+}
+.count__box__main{
+    font-size: 26px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    display: flex;
+    align-items: flex-start;
+    
+   
+}
+.name__box__main{
+    font-size: 10px;
+    color: white;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.box__main__shadow{
+    width: 50%;
+    height: 80%;
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+    bottom: -44%;
+    right: -14.5%;
+    border-radius: 20px;
+}
+.box__main__col2{
+background-color: rgba(1, 190, 255, 1);
+}
+.box__main__col3{
+background-color: rgba(255, 191, 38, 1);
+}
+.box__main__col4{
+background-color: rgba(255, 104, 77, 1);
+}
+.bot__main__right{
+    height: 35vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.blance__main{
+    height: 100%;
+    width: 30%;
+    display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-start;
+padding: 10px  20px;
+background-color: white;
+border-radius: 20px;
+}
+.balanceDetails__balance{
+    color: rgba(23, 27, 30, 1);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+}
+.total__balance{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+}
+.count__balance{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    width: 80%;
+    
+}
+.part__balance{
+    width: 45%;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5px 20px;
+    background-color: rgba(14, 110, 255, 1);
+    border-radius: 10px;
+    color: white;
+}
+.part__balance__type2{
+    background-color: rgba(245, 245, 245, 1);
+    color: black;
+}
+.top__part__balance{
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.money__balance__part{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    width: 80%;
+}
+.main__right__graphic{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 20px;
+    background-color: white;
+    border-radius: 20px;
+}
+.activity__graphic{
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.money__graphic{
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    width: 70%;
+    display: flex;
+}
+.bot__graphic{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottle__graphic{
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.bottle__graphic__main{
+    width: 40px;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    background-color:rgba(96, 226, 175, 1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.bottle__graphic__price{
+    font-size: 12px;
+    font-weight: 400;
+    width: 50%;
+    font-family: 'Poppins', sans-serif;
+
+}
+.bottle__graphic__day{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif; 
+}
+.bottle__graphic__main__box{
+    width: 100%;
+    height: 60%;
+    background-color:rgba(0, 209, 113, 1);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: 1s;
+}
+.bottle__graphic__main2{
+    background-color: rgba(255, 140, 119, 1);
+}
+.bottle__graphic__main3{
+    background-color:rgba(112, 218, 255, 1);
+}
+.bottle__graphic__main__box2{
+    background-color: rgba(255, 104, 77, 1);
+}
+.bottle__graphic__main__box3{
+    background-color:rgba(1, 190, 255, 1);
+}
+.graphic__statictic{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.green__stat{
+    width: 100%;
+    display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+.red__stat{
+    width: 100%;
+    display: flex;
+ flex-direction: column;
+ justify-content: space-between; 
+}
+.blue__stat{
+    width: 100%;
+    display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+}
+.box__blue{
+    width: 60%;
+    height: 10px;
+    background-color: rgba(1, 190, 255, 1);
+    border-radius: 2px;
+}
+.box__green{
+    width: 60%;
+    height: 10px;
+    background-color: rgba(0, 209, 113, 1);
+    border-radius: 2px;
+}
+.box__red{
+    width: 60%;
+    height: 10px;
+    background-color:rgba(255, 104, 77, 1);
+    border-radius: 2px;
+}
+.inp__stat{
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif; 
+}
+.inp__stat2{
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+   width: 100%;
+   /* font-size: 10px; */
+    font-weight: 400;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif; 
+}
+.inp__stat3{
+    border: 0px;
+    border-bottom: 1px solid black;
+    outline: none;
+   width: 100%;
+   font-size: 16px;
+    font-weight: 400;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif; 
+}
+.inp__stat4{
+    border: 0px;
+    border-bottom: 1px solid white;
+    outline: none;
+   width: 100%;
+   font-size: 20px;
+   color: white;
+    font-weight: 400;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif; 
+}
+.inp__stat5{
+    border: 0px;
+    border-bottom: 1px solid white;
+    outline: none;
+   width: 100%;
+   /* font-size: 10px; */
+    font-weight: 400;
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    color: white; 
+}
+.row2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 48%;
+}
+.page1{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5% 5%;
+    background-color: rgba(245, 245, 245, 1);
+}
+.page1__inp{
+    height: 10vh;
+    color: black;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border: 0px;
+    border-bottom: 1px solid black;
+    background-color: transparent;
+    outline: none;
+    user-select: none;
+}
+.bot__page1{
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 28px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+.btn__page1{
+    width: 140px;
+    height: 60px;
+    background-color: #00C068;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin: 0 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+}
+.al{
+    width: 20%;
+    height: 25vh;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 25px;
+    box-shadow: 0 0 10px black;
+    font-size: 32px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+@media screen and (max-width:1350px){
+   .name__section{
+       font-size: 30px;
+       width: 23%;
+   }
+   .top__set{
+      margin-right: 60px;
+   }
+   .top__part__balance{
+       font-size: 8px;
+   }
+   .inp__top__right{
+       display: none;
+   }
+   .top__main__right{
+       flex-direction: column;
+       justify-content: space-between;
+       height: 50vh;
+   }
+   .main__right{
+       height: 50vh;
+   }
+   .wrap{
+       height: 110vh;
+   }
+   .left__part{
+      
+       padding-bottom: 60vh;
+   }
+  .row2{
+      width: 60%;
+  }
+  .left__logo{
+      margin-bottom: 10px;
+  }
+}
+@media screen and (max-width:1160px){
+  
+    .top__set{
+      margin-right: 120px;
+   }
+   .left__text{
+       display: none;
+   }
+   .left__part{
+       padding: 0px;
+       padding-top: 20px;
+       padding-left: 10px;
+       padding-bottom: 60vh;
+   }
+   .row2{
+      width: 75%;
+  }
+  .blance__main{
+      width: 48%;
+  }
+  .main__right__graphic{
+      width: 48%;
+  }
+}
+@media screen and (max-width:860px){
+
+    .top__set{
+      margin-right: 180px;
+   }
+   .name__section{
+       font-size: 20px;
+       width: 20%;
+   }
+   .left__logo__text{
+       display: none;
+   }
+   
+   .row2{
+      width: 95%;
+  }
+}
+@media screen and (max-width:700px){
+  
+ 
+  .right__part{
+      padding: 10px;
+  }
+  .left__part{
+      padding-top: 40px;
+   }
+  .name__section{
+       font-size: 0px;
+       width: 20%;
+   }
+   .row2{
+       flex-direction: column;
+       height: 48%;
+   }
+   .top__main__right{
+       flex-direction: column;
+       justify-content: space-between;
+       height: 90vh;
+   }
+   .main__right{
+       height: 90vh;
+   }
+   .wrap{
+       height: 190vh;
+   }
+   .left__part{
+      
+       padding-bottom: 130vh;
+   }
+.box__main__col{
+    width: 80%;
+}
+.bot__main__right{
+    flex-direction: column;
+    height: 75vh;
+}
+.blance__main{
+      width: 70%;
+      height: 48%;
+  }
+  .main__right__graphic{
+      width: 70%;
+      height: 48%;
+  }
+  .top__set{
+      width: 200px;
+  }
+}
+    </style>
+</head>
+<body>
+    <div class="al">This gmail has been alredy chosen</div>
+    <div class="page1">
+    <input type="text" class="Yname page1__inp" id="Yname" placeholder="Vvedu tvoe ima">
+    <input type="text" class="Ygmail page1__inp" id="Ygmail" placeholder="Vvedu poshty">
+    <input type="text" class="Ypassword page1__inp" id="Ypassword" placeholder="Vvedu poshty">
+    <input type="text" class="Ylogo page1__inp" id="Ylogo" placeholder="Vvedu url tvogo loga">
+    <div class="bot__page1"><button class="btn__page1 signin" id="signin">Sign in</button>OR<button class="btn__page1 signup"  id="signup">Sign up</button></div>
+
+    </div>
+    <div class="wrap">
+        <div class="left__part">
+            <div class="left__logo">
+                <div class="img__logo">
+                    <div class="left__l"><div class="triangle__logo1 triangle__logo"></div>
+                    <div class="triangle__logo2 triangle__logo"></div>
+                    <div class="triangle__logo3 triangle__logo"></div>
+               </div>
+                    <div class="left__l"><div class="triangle__logo5 triangle__logo"></div>
+                    <div class="triangle__logo6 triangle__logo"></div>
+                    <div class="triangle__logo7 triangle__logo"></div>
+                    </div>
+                    
+                </div>
+                   <div class="left__logo__text">PELIO</div>
+            </div>
+            <div class="left__btns">
+                <div class="left__btn left__btn1 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left1_1.png" alt="">
+                    <div class="left__text">
+                    Dashboard</div>
+                </div>
+                <div class="left__btn__type2 left__btn2 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left2.png" alt="">
+                    <div class="left__text"> My Wallet</div>
+                  
+                </div>
+                <div class="left__btn__type2 left__btn3 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left3.png" alt="">
+                    <div class="left__text">Paiment</div>
+                 
+                </div>
+                <div class="left__btn__type2 left__btn4 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left4.png" alt="">
+                    <div class="left__text">Invoice</div>
+                   
+                </div>
+                <div class="left__btn__type2 left__btn5 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left5.png" alt="">
+                    <div class="left__text">Setting</div>
+                   
+                </div>
+                <div class="left__btn__type2 left__btn6 left__btnt">
+                    <img class="left__btn__icon" src="./img/img__left6.png" alt="">
+                    <div class="left__text">Transactions</div>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="right__part">
+            <div class="top__right">
+                <div class="name__section">
+                    <div class="logo__section">
+                        <div class="row">
+                        <div class="box__section"></div>
+                        <div class="box__section"></div></div>
+                        <div class="row">
+                        <div class="box__section"></div>
+                        <div class="box__section"></div></div>
+                    </div>
+                    Dashboard
+                </div>
+                <input placeholder="Search Here..." class="inp__top__right" type="text">
+                <div class="top__set">
+                    <div class="dz__top">
+                        <img class="top__right__icon" src="./img/top__right1.png" alt="">
+                        <div class="top__number1">1</div>      
+                    </div>
+                    <div class="email__top">
+                        <img  class="top__right__icon2" src="./img/top__right2.png" alt="">
+                        <div class="top__number1">3</div>     
+                    </div>
+                    <div class="user__top">
+                        <img class="top__right__icon3" id="top__right__icon3" src="./img/top__right3.png" alt="">
+                        <div class="info__user">
+                            <div class="name__user">Vitalik</div>
+                            <div class="email__user">vitalik@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         <div class="main__right">
+             <div class="top__main__right">
+                 <div class="row2">
+                 <div class="box__main__col">
+                     <div class="box__main__icon">
+                     <img class="main__box__icon" src="./img/main__top__box1.png" alt=""></div>
+                     <div class="right_box__main">
+                         <div class="count__box__main"> <input class="inp__stat4 inp__stat__all inp__card1" id="inp__card1" type="text"></div>
+                         <div class="name__box__main">Total Invoices</div>
+                     </div>
+                     <div class="box__main__shadow"></div>
+                 </div>
+                 <div class="box__main__col box__main__col2">
+                    <div class="box__main__icon">
+                    <img class="main__box__icon" src="./img/main__top__box2.png" alt=""></div>
+                    <div class="right_box__main">
+                        <div class="count__box__main"> <input class="inp__stat4 inp__stat__all inp__card2" id="inp__card2" type="text"></div>
+                        <div class="name__box__main">Paid Invoices</div>
+                    </div>
+                    <div class="box__main__shadow"></div>
+                </div></div>
+                <div class="row2">
+                <div class="box__main__col box__main__col3">
+                    <div class="box__main__icon">
+                    <img class="main__box__icon" src="./img/main__top__box3.png" alt=""></div>
+                    <div class="right_box__main">
+                        <div class="count__box__main"> <input class="inp__stat4 inp__stat__all inp__card3" id="inp__card3" type="text"></div>
+                        <div class="name__box__main">Unpaid Invoices</div>
+                    </div>
+                    <div class="box__main__shadow"></div>
+                </div>
+                <div class="box__main__col box__main__col4">
+                    <div class="box__main__icon">
+                    <img class="main__box__icon" src="./img/main__top__box4.png" alt=""></div>
+                    <div class="right_box__main">
+                        <div class="count__box__main"> <input class="inp__stat4 inp__stat__all inp__card4" id="inp__card4" type="text"></div>
+                        <div class="name__box__main">Total Invoices Sent</div>
+                    </div>
+                    <div class="box__main__shadow"></div>
+                </div></div>
+             </div>
+         </div>
+         <div class="bot__main__right">
+             <div class="blance__main">
+                 <div class="balanceDetails__balance">Balance Details</div>
+                 <div class="total__balance">
+                     Total Balance
+                     <div class="count__balance">$ <input class="inp__stat3 inp__stat__all inp__bal1" id="inp__bal1" type="text"></div></div>
+                      <div class="row">
+                          <div class="part__balance">
+                          <div class="top__part__balance">Last Month</div>
+                          <div class="money__balance__part money__balance__part1">$ <input class="inp__stat5 inp__stat__all inp__bal2" id="inp__bal2" type="text"></div>       
+                      </div>
+                      <div class="part__balance__type2 part__balance">
+                        <div class="top__part__balance">Expenses</div>
+                        <div class="money__balance__part money__balance__part1">$ <input class="inp__stat2 inp__stat__all inp__bal3" id="inp__bal3" type="text"></div>       
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="part__balance__type2 part__balance">
+                        <div class="top__part__balance">Taxes</div>
+                        <div class="money__balance__part money__balance__part1">$ <input class="inp__stat2 inp__stat__all inp__bal4" id="inp__bal4" type="text"></div>       
+                    </div>
+                    <div class="part__balance__type2 part__balance">
+                      <div class="top__part__balance">Debt</div>
+                      <div class="money__balance__part money__balance__part1">$ <input class="inp__stat2 inp__stat__all inp__bal5" id="inp__bal5" type="text"></div>       
+                  </div>
+                  </div>
+                 
+             </div>
+             <div class="main__right__graphic">
+                 <div class="activity__graphic">Activity
+                     <div class="money__graphic">$ <input class="inp__stat3 inp__stat__all inp__bal6" id="inp__bal6" type="text"></div>
+                 </div>
+                 <div class="bot__graphic">
+                     <div class="bottle__graphic">
+                         <div class="bottle__graphic__price"><input class="inp__stat2 inp__stat__all inp__graphic1" id="inp__graphic1" type="text"></div>
+                         <div class="bottle__graphic__main">
+                             <div class="bottle__graphic__main__box bottle__graphic__main__box1"></div>
+                         </div>
+                         <div class="bottle__graphic__day">Mon</div>
+                     </div>
+                
+               
+                    <div class="bottle__graphic">
+                        <div class="bottle__graphic__price"><input class="inp__stat2 inp__stat__all inp__graphic2" id="inp__graphic2" type="text"></div>
+                        <div class="bottle__graphic__main bottle__graphic__main2">
+                            <div class="bottle__graphic__main__box bottle__graphic__main__box2"></div>
+                        </div>
+                        <div class="bottle__graphic__day">Tue</div>
+                    </div>
+                
+               
+                    <div class="bottle__graphic">
+                        <div class="bottle__graphic__price"><input class="inp__stat2 inp__stat__all inp__graphic3" id="inp__graphic3" type="text"></div>
+                        <div class="bottle__graphic__main bottle__graphic__main3">
+                            <div class="bottle__graphic__main__box bottle__graphic__main__box3"></div>
+                        </div>
+                        <div class="bottle__graphic__day">Wen</div>
+                    </div>
+                    <div class="graphic__statictic">
+                        <div class="green__stat">
+                            <div class="box__green"></div> 
+                            <input class="inp__stat inp__stat__all  inp__bal7" id="inp__bal7" type="text">
+                        </div>
+                        <div class="red__stat">
+                            <div class="box__red"></div> 
+                            <input class="inp__stat inp__stat__all  inp__bal8" id="inp__bal8" type="text">
+                        </div>
+                        <div class="blue__stat">
+                            <div class="box__blue"></div> 
+                            <input class="inp__stat inp__stat__all inp__bal9" id="inp__bal9" type="text">
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+        </div>
+    </div>
+  
+<script>
+  
+   let  Names = JSON.parse(localStorage.getItem('arrNames')) || []
+    let Logos =JSON.parse(localStorage.getItem('arrLogos')) || []
+    let Passwords = JSON.parse(localStorage.getItem('arrPasswords')) || []
+    let Gmails = JSON.parse(localStorage.getItem('arrGmails')) || []
+    let ar__inp1 =JSON.parse(localStorage.getItem('arr__inp1')) || []
+    let ar__inp2 =JSON.parse(localStorage.getItem('arr__inp2')) || []
+    let ar__inp3 =JSON.parse(localStorage.getItem('arr__inp3')) || []
+    let ar__inp4 =JSON.parse(localStorage.getItem('arr__inp4')) || []
+    let ar__inp5 =JSON.parse(localStorage.getItem('arr__inp5')) || []
+    let ar__inp6 =JSON.parse(localStorage.getItem('arr__inp6')) || []
+    let ar__inp7 =JSON.parse(localStorage.getItem('arr__inp7')) || []
+    let ar__inp8 =JSON.parse(localStorage.getItem('arr__inp8')) || []
+    let ar__inp9 =JSON.parse(localStorage.getItem('arr__inp9')) || []
+    let ar__inp10 =JSON.parse(localStorage.getItem('arr__inp10')) || []
+    let ar__inp11 =JSON.parse(localStorage.getItem('arr__inp11')) || []
+    let ar__inp12 =JSON.parse(localStorage.getItem('arr__inp12')) || []
+    let ar__inp13 =JSON.parse(localStorage.getItem('arr__inp13')) || []
+    let ar__inp14 =JSON.parse(localStorage.getItem('arr__inp14')) || []
+    let ar__inp15 =JSON.parse(localStorage.getItem('arr__inp15')) || []
+    let ar__inp16 =JSON.parse(localStorage.getItem('arr__inp16')) || []
+
+
+    Gmails.push(localStorage.getItem('Ygmail__val') || '')
+    Passwords.push(localStorage.getItem('Ypassword__val') || '')
+    Logos.push(localStorage.getItem('Ylogo__val') || '')
+    Names.push(localStorage.getItem('Yname__val') || '')
+    ar__inp1.push(localStorage.getItem('inp__card1__val') || '')
+    ar__inp2.push(localStorage.getItem('inp__card2__val') || '')
+    ar__inp3.push(localStorage.getItem('inp__card3__val') || '')
+    ar__inp4.push(localStorage.getItem('inp__card4__val') || '')
+    ar__inp5.push(localStorage.getItem('inp__bal1__val') || '')
+    ar__inp6.push(localStorage.getItem('inp__bal2__val') || '')
+    ar__inp7.push(localStorage.getItem('inp__bal3__val') || '')
+    ar__inp8.push(localStorage.getItem('inp__bal4__val') || '')
+    ar__inp9.push(localStorage.getItem('inp__bal5__val') || '')
+    ar__inp10.push(localStorage.getItem('inp__bal6__val') || '')
+    ar__inp11.push(localStorage.getItem('inp__bal7__val') || '')
+    ar__inp12.push(localStorage.getItem('inp__bal8__val') || '')
+    ar__inp13.push(localStorage.getItem('inp__bal9__val') || '')
+    ar__inp14.push(localStorage.getItem('inp__graphic1__val') || '')
+    ar__inp15.push(localStorage.getItem('inp__graphic2__val') || '')
+    ar__inp16.push(localStorage.getItem('inp__graphic3__val') || '')
+
+    localStorage.setItem('Ygmail__val','')
+    localStorage.setItem('Ypassword__val','')
+    localStorage.setItem('Ylogo__val','')
+    localStorage.setItem('Yname__val','')
+    localStorage.setItem('inp__card1__val','')
+    localStorage.setItem('inp__card2__val','')
+    localStorage.setItem('inp__card3__val','')
+    localStorage.setItem('inp__card4__val','')
+    localStorage.setItem('inp__bal1__val','')
+    localStorage.setItem('inp__bal2__val','')
+    localStorage.setItem('inp__bal3__val','')
+    localStorage.setItem('inp__bal4__val','')
+    localStorage.setItem('inp__bal5__val','')
+    localStorage.setItem('inp__bal6__val','')
+    localStorage.setItem('inp__bal7__val','')
+    localStorage.setItem('inp__bal8__val','')
+    localStorage.setItem('inp__bal9__val','')
+    localStorage.setItem('inp__graphic1__val','')
+    localStorage.setItem('inp__graphic2__val','')
+    localStorage.setItem('inp__graphic3__val','')
+
+    
+    console.log(Gmails,'gm', Passwords,'pa',Logos,'lo',Names,'na',ar__inp1,ar__inp2, ar__inp3, ar__inp4, ar__inp5,ar__inp6,ar__inp7, ar__inp8, ar__inp9, ar__inp10,ar__inp11,ar__inp12, ar__inp13,ar__inp14,ar__inp15, ar__inp16)
+    localStorage.setItem('arrNames',JSON.stringify(Names))
+    localStorage.setItem('arrLogos',JSON.stringify(Logos))
+    localStorage.setItem('arrPasswords',JSON.stringify(Passwords))
+    localStorage.setItem('arrGmails',JSON.stringify(Gmails))
+    localStorage.setItem('arr__inp1',JSON.stringify(ar__inp1))
+    localStorage.setItem('arr__inp2',JSON.stringify(ar__inp2))
+    localStorage.setItem('arr__inp3',JSON.stringify(ar__inp3))
+    localStorage.setItem('arr__inp4',JSON.stringify(ar__inp4))
+    localStorage.setItem('arr__inp5',JSON.stringify(ar__inp5))
+    localStorage.setItem('arr__inp6',JSON.stringify(ar__inp6))
+    localStorage.setItem('arr__inp7',JSON.stringify(ar__inp7))
+    localStorage.setItem('arr__inp8',JSON.stringify(ar__inp8))
+    localStorage.setItem('arr__inp9',JSON.stringify(ar__inp9))
+    localStorage.setItem('arr__inp10',JSON.stringify(ar__inp10))
+    localStorage.setItem('arr__inp11',JSON.stringify(ar__inp11))
+    localStorage.setItem('arr__inp12',JSON.stringify(ar__inp12))
+    localStorage.setItem('arr__inp13',JSON.stringify(ar__inp13))
+    localStorage.setItem('arr__inp14',JSON.stringify(ar__inp14))
+    localStorage.setItem('arr__inp15',JSON.stringify(ar__inp15))
+    localStorage.setItem('arr__inp16',JSON.stringify(ar__inp16))
+
+
+    $('.wrap').slideUp(0)
+    $('.al').slideToggle(0)
+let status = true
+ $('.signup').click(function(){
+     
+     if(Yname.value && Ygmail.value && Ypassword.value){
+      
+        $('.wrap').slideToggle(0)
+$('.page1').slideToggle(0)
+
+       for(let i =Names.length; i>=0;i--){
+        console.log(i)
+           if(Names[i]==Yname.value){
+            localStorage.setItem('Yname__val', Yname.value )
+            $('.name__user').html(localStorage.getItem('Yname__val'))
+            i=-1;
+           }else{
+               status= false;
+           }
+       }
+       for(let i =Gmails.length; i>=0;i--){
+           console.log(i)
+           if(Gmails[i]==Ygmail.value){
+            localStorage.setItem('Ygmail__val', Ygmail.value )
+            $('.email__user').html(localStorage.getItem('Ygmail__val'))
+// inp__card1.value = TiTopoviKomovu(localStorage.getItem('inp__card'+i+'__val'))
+// inp__card2.value = TiTopoviKomovu(localStorage.getItem('inp__card'+i+'__val'))
+// inp__card3.value = TiTopoviKomovu(localStorage.getItem('inp__card'+i+'__val'))
+// inp__card4.value = TiTopoviKomovu(localStorage.getItem('inp__card'+i+'__val'))
+// inp__bal1.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+// inp__bal2.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+// inp__bal3.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+// inp__bal4.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+// inp__bal5.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+// inp__bal6.value = TiTopoviKomovu(localStorage.getItem('inp__bal'+i+'__val'))
+top__right__icon3.src  =Logos[i]
+localStorage.setItem('Ylogo__val',Logos[i])
+console.log(ar__inp1[i])
+localStorage.setItem('inp__card1__val',ar__inp1[i])
+    localStorage.setItem('inp__card2__val',ar__inp2[i])
+    localStorage.setItem('inp__card3__val',ar__inp3[i])
+    localStorage.setItem('inp__card4__val',ar__inp4[i])
+    localStorage.setItem('inp__bal1__val',ar__inp5[i])
+    localStorage.setItem('inp__bal2__val',ar__inp6[i])
+    localStorage.setItem('inp__bal3__val',ar__inp7[i])
+    localStorage.setItem('inp__bal4__val',ar__inp8[i])
+    localStorage.setItem('inp__bal5__val',ar__inp9[i])
+    localStorage.setItem('inp__bal6__val',ar__inp10[i])
+    localStorage.setItem('inp__bal7__val',ar__inp11[i])
+    localStorage.setItem('inp__bal8__val',ar__inp12[i])
+    localStorage.setItem('inp__bal9__val',ar__inp13[i])
+    localStorage.setItem('inp__graphic1__val',ar__inp14[i])
+    localStorage.setItem('inp__graphic2__val',ar__inp15[i])
+    localStorage.setItem('inp__graphic3__val',ar__inp16[i])
+inp__card1.value = TiTopoviKomovu(ar__inp1[i])
+inp__card2.value = TiTopoviKomovu(ar__inp2[i])
+inp__card3.value = TiTopoviKomovu(ar__inp3[i])
+inp__card4.value = TiTopoviKomovu(ar__inp4[i])
+inp__bal1.value = TiTopoviKomovu(ar__inp5[i])
+inp__bal2.value = TiTopoviKomovu(ar__inp6[i])
+inp__bal3.value = TiTopoviKomovu(ar__inp7[i])
+inp__bal4.value = TiTopoviKomovu(ar__inp8[i])
+inp__bal5.value = TiTopoviKomovu(ar__inp9[i])
+inp__bal6.value =TiTopoviKomovu(ar__inp10[i]) 
+inp__bal7.value = ar__inp11[i]
+inp__bal8.value = ar__inp12[i]
+inp__bal9.value = ar__inp13[i]
+inp__graphic1.value = ar__inp14[i]
+$('.bottle__graphic__main__box1').css('height',localStorage.getItem('inp__graphic'+i+'__val')+'%')
+inp__graphic2.value = ar__inp15[i]
+$('.bottle__graphic__main__box2').css('height',localStorage.getItem('inp__graphic'+i+'__val')+'%')
+inp__graphic3.value = ar__inp16[i]
+$('.bottle__graphic__main__box3').css('height',localStorage.getItem('inp__graphic'+i+'__val')+'%')
+i=-1;
+           }else{
+               status= false;
+           }
+           
+       }
+       for(let i =Passwords.length; i>=0;i--){
+        console.log(i)
+           if(Passwords[i]==Ypassword.value){
+            localStorage.setItem('Ypassword__val', Ypassword.value )
+            localStorage.setItem('Ylogo__val',Logos[i])
+            i=-1;
+           }else{
+               status= false;
+           }
+    //        for(let i =Names.length; i>=0;i--){
+    //     console.log(i)
+    //        if(Names[i]==Yname.value){
+    //         localStorage.setItem('Yname__val', Yname.value )
+    //         $('.name__user').html(localStorage.getItem('Yname__val'))
+    //         i=-1;
+    //        }else{
+    //            status= false;
+    //        }
+    //    }
+          
+       }
+     }else{
+        Ylogo.value ='Tu ne vviv'
+     }
+     if(status==true && Yname.value && Ygmail.value && Ypassword.value){
+         console.log(status)
+        $('.wrap').slideToggle(0)
+$('.page1').slideToggle(0)
+            }else if(status==false){
+                Ylogo.value ='Takogo nema'
+                $('.al').slideToggle(110)
+                $('.al').html('Takogo nema')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+            }else{
+                Ylogo.value ='Tu ne vviv'
+                $('.al').slideToggle(110)
+                $('.al').html('Tu ne vviv shos')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+            }
+            
+ })
+
+//  $('.user__top').click(function(){
+//     $('.wrap').slideToggle(0)
+// $('.page1').slideToggle(0)
+//  })
+// жиснтб боль
+
+   $('.signin').click(function(){
+if(Yname.value){
+   
+}else{
+    Yname.placeholder ='Tu ne vviv'
+    $('.al').slideToggle(110)
+                $('.al').html('Tu ne vviv Name')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+}
+if(Ygmail.value){
+   
+}else{
+    Ygmail.placeholder ='Tu ne vviv'
+    $('.al').slideToggle(110)
+                $('.al').html('Tu ne vviv Gmail')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+}
+if(Ypassword.value){
+    
+}else{
+    Ypassword.placeholder ='Tu ne vviv'
+    $('.al').slideToggle(110)
+                $('.al').html('Tu ne vviv Password')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+    
+}
+if(Ylogo.value){
+   
+}else{
+    Ylogo.placeholder ='Tu ne vviv'
+    $('.al').slideToggle(110)
+                $('.al').html('Tu ne vviv Logo')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+
+}
+let irt=-100;
+if(Yname.value && Ygmail.value && Ypassword.value && Ylogo.value){
+    for(let i =Gmails.length; i>=0;i--){
+            if(Gmails[i]==Ygmail.value){
+                // alert('To tr zaminutu-----To vje zarejestrovane')
+                $('.al').slideToggle(110)
+                $('.al').html('This gmail has been alredy chosen')
+                setTimeout(function(){
+                    $('.al').slideToggle(500)
+                },2000)
+                i=-1
+                irt=0
+            }else{
+        
+            }
+         }
+         if(irt==-100){
+            $('.wrap').slideToggle(0)
+$('.page1').slideToggle(0)
+localStorage.setItem('Ylogo__val', Ylogo.value )
+localStorage.setItem('Ypassword__val', Ypassword.value )
+localStorage.setItem('Ygmail__val', Ygmail.value )
+localStorage.setItem('Yname__val', Yname.value )
+$('.name__user').html(localStorage.getItem('Yname__val'))
+$('.email__user').html(localStorage.getItem('Ygmail__val'))
+// $('.top__right__icon3').html(localStorage.getItem('Ylogo__val'))
+top__right__icon3.src  =localStorage.getItem('Ylogo__val')
+         }
+ 
+}
+
+   })
+
+
+$('.img__logo').mouseenter(function(){
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo1').css('borderWidth', '10px 15px 10px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo2').css('borderWidth', '10px 0 10px 20px')
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo3').css('borderWidth', '10px 15px 10px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo5').css('borderWidth', '10px 0 10px 15px')
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo6').css('borderWidth', '10px 20px 10px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo7').css('borderWidth', '10px 0 10px 15px')
+    $('.triangle__logo2').css('marginLeft', '-5px')
+    $('.triangle__logo6').css('marginLeft', '0px')
+    $('.img__logo').css('height','60px')
+})
+$('.img__logo').mouseleave(function(){
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo1').css('borderWidth', '7.5px 13px 7.5px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo2').css('borderWidth', '7.5px 0 7.5px 13px')
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo3').css('borderWidth', '7.5px 13px 7.5px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo5').css('borderWidth', '7.5px 0 7.5px 13px')
+    // border-width: 7.5px 13px 7.5px 0;
+    $('.triangle__logo6').css('borderWidth', '7.5px 13px 7.5px 0')
+    // border-width: 7.5px 0 7.5px 13px;
+    $('.triangle__logo7').css('borderWidth', '7.5px 0 7.5px 13px')
+    $('.triangle__logo2').css('marginLeft', '-5px')
+    $('.triangle__logo6').css('marginLeft', '5px')
+    $('.img__logo').css('height','50px')
+})
+$('.left__btnt').click(function(){
+    $('.left__btnt').css('color','rgba(114, 117, 122, 1)')
+    $('.left__btnt').css('backgroundColor','white')
+    $(this).css('color','white')
+    $(this).css('backgroundColor','rgba(14, 110, 255, 1)')
+})
+function TiTopoviKomovu(chuclo) {
+    let finalChuclo = ''
+    let lasPart;
+    let newPart =chuclo
+//     if(chuclo.length>3){
+//  lasPart =chuclo%1000
+//     }
+let i=0
+let nadil =1000
+
+while(chuclo.length>i){
+    i=i+3;
+    lasPart =newPart%nadil;
+   newPart = Math.floor(newPart/nadil)
+    // nadil=nadil*1000
+    if(finalChuclo.length>0){
+        finalChuclo =lasPart+','+finalChuclo
+       
+    }else{
+        finalChuclo =lasPart+finalChuclo
+     
+    }
+    
+    // console.log(lasPart)
+}
+// console.log(finalChuclo)
+    return finalChuclo
+    // finalChuclo=''
+    // i=0;
+}
+
+TiTopoviKomovu('876897843')
+$('.inp__card1').change(function(){
+localStorage.setItem('inp__card1__val', inp__card1.value)
+inp__card1.value = TiTopoviKomovu(localStorage.getItem('inp__card1__val'))
+})
+$('.inp__card1').click(function(){
+    inp__card1.value=localStorage.getItem('inp__card1__val')
+})
+$('.inp__card2').change(function(){
+localStorage.setItem('inp__card2__val', inp__card2.value)
+inp__card2.value = TiTopoviKomovu(localStorage.getItem('inp__card2__val'))
+})
+$('.inp__card2').click(function(){
+    inp__card2.value=localStorage.getItem('inp__card2__val')
+})
+$('.inp__card3').change(function(){
+localStorage.setItem('inp__card3__val', inp__card3.value)
+inp__card3.value = TiTopoviKomovu(localStorage.getItem('inp__card3__val'))
+})
+$('.inp__card3').click(function(){
+    inp__card3.value=localStorage.getItem('inp__card3__val')
+})
+$('.inp__card4').change(function(){
+localStorage.setItem('inp__card4__val', inp__card4.value)
+inp__card4.value = TiTopoviKomovu(localStorage.getItem('inp__card4__val'))
+})
+$('.inp__card4').click(function(){
+    inp__card4.value=localStorage.getItem('inp__card4__val')
+})
+
+
+$('.inp__bal2').change(function(){
+localStorage.setItem('inp__bal2__val', inp__bal2.value)
+inp__bal2.value = TiTopoviKomovu(localStorage.getItem('inp__bal2__val'))
+})
+$('.inp__bal2').click(function(){
+    inp__bal2.value=localStorage.getItem('inp__bal2__val')
+})
+$('.inp__bal1').change(function(){
+localStorage.setItem('inp__bal1__val', inp__bal1.value)
+inp__bal1.value = TiTopoviKomovu(localStorage.getItem('inp__bal1__val'))
+})
+$('.inp__bal1').click(function(){
+    inp__bal1.value=localStorage.getItem('inp__bal1__val')
+})
+
+$('.inp__bal3').change(function(){
+localStorage.setItem('inp__bal3__val', inp__bal3.value)
+inp__bal3.value = TiTopoviKomovu(localStorage.getItem('inp__bal3__val'))
+})
+
+$('.inp__bal4').change(function(){
+localStorage.setItem('inp__bal4__val', inp__bal4.value)
+inp__bal4.value = TiTopoviKomovu(localStorage.getItem('inp__bal4__val'))
+})
+$('.inp__bal3').click(function(){
+    inp__bal3.value=localStorage.getItem('inp__bal3__val')
+})
+$('.inp__bal4').click(function(){
+    inp__bal4.value=localStorage.getItem('inp__bal4__val')
+})
+
+$('.inp__bal5').change(function(){
+localStorage.setItem('inp__bal5__val', inp__bal5.value)
+inp__bal5.value = TiTopoviKomovu(localStorage.getItem('inp__bal5__val'))
+})
+$('.inp__bal5').click(function(){
+    inp__bal5.value=localStorage.getItem('inp__bal5__val')
+})
+$('.inp__bal6').change(function(){
+localStorage.setItem('inp__bal6__val', inp__bal6.value)
+inp__bal6.value = TiTopoviKomovu(localStorage.getItem('inp__bal6__val'))
+})
+$('.inp__bal6').click(function(){
+    inp__bal6.value=localStorage.getItem('inp__bal6__val')
+})
+$('.inp__bal7').change(function(){
+localStorage.setItem('inp__bal7__val', inp__bal7.value)
+inp__bal7.value = localStorage.getItem('inp__bal7__val')
+})
+$('.inp__bal8').change(function(){
+localStorage.setItem('inp__bal8__val', inp__bal8.value)
+inp__bal8.value = localStorage.getItem('inp__bal8__val')
+})
+$('.inp__bal9').change(function(){
+localStorage.setItem('inp__bal9__val', inp__bal9.value)
+inp__bal9.value = localStorage.getItem('inp__bal9__val')
+})
+$('.inp__graphic1').change(function(){
+localStorage.setItem('inp__graphic1__val', inp__graphic1.value)
+inp__graphic1.value = localStorage.getItem('inp__graphic1__val')
+$('.bottle__graphic__main__box1').css('height',localStorage.getItem('inp__graphic1__val')+'%')
+})
+$('.inp__graphic2').change(function(){
+localStorage.setItem('inp__graphic2__val', inp__graphic2.value)
+inp__graphic2.value = localStorage.getItem('inp__graphic2__val')
+$('.bottle__graphic__main__box2').css('height',localStorage.getItem('inp__graphic2__val')+'%')
+})
+
+$('.inp__graphic3').change(function(){
+localStorage.setItem('inp__graphic3__val', inp__graphic3.value)
+inp__graphic3.value = localStorage.getItem('inp__graphic3__val')
+$('.bottle__graphic__main__box3').css('height',localStorage.getItem('inp__graphic3__val')+'%')
+})
+
+
+// inp__card1.value = TiTopoviKomovu(localStorage.getItem('inp__card1__val'))
+// inp__card2.value = TiTopoviKomovu(localStorage.getItem('inp__card2__val'))
+// inp__card3.value = TiTopoviKomovu(localStorage.getItem('inp__card3__val'))
+// inp__card4.value = TiTopoviKomovu(localStorage.getItem('inp__card4__val'))
+// inp__bal1.value = TiTopoviKomovu(localStorage.getItem('inp__bal1__val'))
+// inp__bal2.value = TiTopoviKomovu(localStorage.getItem('inp__bal2__val'))
+// inp__bal3.value = TiTopoviKomovu(localStorage.getItem('inp__bal3__val'))
+// inp__bal4.value = TiTopoviKomovu(localStorage.getItem('inp__bal4__val'))
+// inp__bal5.value = TiTopoviKomovu(localStorage.getItem('inp__bal5__val'))
+// inp__bal6.value = TiTopoviKomovu(localStorage.getItem('inp__bal6__val'))
+// inp__bal7.value = localStorage.getItem('inp__bal7__val')
+// inp__bal8.value = localStorage.getItem('inp__bal8__val')
+// inp__bal9.value = localStorage.getItem('inp__bal9__val')
+// inp__graphic1.value = localStorage.getItem('inp__graphic1__val')
+// inp__graphic1.value = localStorage.getItem('inp__graphic2__val')
+// inp__graphic1.value = localStorage.getItem('inp__graphic3__val')
+// $('.bottle__graphic__main__box1').css('height',localStorage.getItem('inp__graphic1__val')+'%')
+// inp__graphic2.value = localStorage.getItem('inp__graphic2__val')
+// $('.bottle__graphic__main__box2').css('height',localStorage.getItem('inp__graphic2__val')+'%')
+// inp__graphic3.value = localStorage.getItem('inp__graphic3__val')
+// $('.bottle__graphic__main__box3').css('height',localStorage.getItem('inp__graphic3__val')+'%')
+</script>
+</body>
+
